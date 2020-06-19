@@ -16,7 +16,13 @@ module.exports = {
     actions : {
 
         findPosts: {
-                async handler(ctx){
+            rest : {
+                method : "GET",
+                path : "/find",
+            },
+
+            async handler(ctx){
+                return("fetch-posts.find")
             }
         }
     }
