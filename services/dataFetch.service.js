@@ -1,9 +1,10 @@
-const DbService = require("moleculer-db");
-const MongooseAdapter = require("moleculer-db-adapter-mongo");
-const PostModel = require('../schema/posts.schema');
-require('dotenv').config();
+import {DbService} from 'moleculer-db';
+import { MongooseAdapter } from 'moleculer-db-adapter-mongoose';
+import {PostModel} from '../schema/posts.schema';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-module.exports = {
+export default dataFetch = {
     name : "fetch-posts",
     mixins : [DbService],
     adapter : new MongooseAdapter(process.env.MONGO_URL),

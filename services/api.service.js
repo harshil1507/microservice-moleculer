@@ -1,13 +1,13 @@
 "use strict";
 
-const ApiGateway = require("moleculer-web");
+import { ApiGateway} from "moleculer-web"
 /**
  * @typedef {import('moleculer').Context} Context Moleculer's Context
  * @typedef {import('http').IncomingMessage} IncomingRequest Incoming HTTP Request
  * @typedef {import('http').ServerResponse} ServerResponse HTTP Server Response
  */
 
-module.exports = {
+export default api = {
 	name: "api",
 	mixins: [ApiGateway],
 

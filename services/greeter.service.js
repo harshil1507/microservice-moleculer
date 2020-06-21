@@ -4,7 +4,7 @@
  * @typedef {import('moleculer').Context} Context Moleculer's Context
  */
 
-module.exports = {
+export default greeter = {
 	name: "greeter",
 
 	/**

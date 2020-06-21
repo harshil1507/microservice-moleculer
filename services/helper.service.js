@@ -1,4 +1,4 @@
-module.exports={
+export default helper = {
     name : "helper",
 
     events : {

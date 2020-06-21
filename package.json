@@ -2,6 +2,7 @@
   "name": "moleculer-demo",
   "version": "1.0.0",
   "description": "My Moleculer-based microservices project",
+  "type" : "module",
   "scripts": {
     "dev": "moleculer-runner --repl --hot services/**/*.service.js",
     "start": "moleculer-runner",
