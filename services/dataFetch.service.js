@@ -1,17 +1,14 @@
 const DbService = require("moleculer-db");
 const MongooseAdapter = require("moleculer-db-adapter-mongo");
-const mongoose = require("mongoose");
+const PostModel = require('../schema/posts.schema');
+require('dotenv').config();
 
 module.exports = {
     name : "fetch-posts",
     mixins : [DbService],
-    adapter : new MongooseAdapter('mongodb+srv://harshil:harshil@123@cluster0-stbbj.mongodb.net/microservices?retryWrites=true&w=majority'),
+    adapter : new MongooseAdapter(process.env.MONGO_URL),
     collection : 'posts',
-    model: mongoose.model("Post", mongoose.Schema({
-        title: { type: String },
-        content: { type: String },
-        votes: { type: Number, default: 0}
-    })),
+    model : PostModel,
 
     actions : {
 
@@ -22,7 +19,7 @@ module.exports = {
             },
 
             async handler(ctx){
-                return("fetch-posts.find")
+                return ctx.call("fetch-posts.find")
             }
         }
     }
